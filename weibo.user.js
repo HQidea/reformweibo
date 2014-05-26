@@ -2,7 +2,7 @@
 // @name           Large Pictures for Weibo
 // @namespace      http://www.hqhome.net
 // @description    Large Pictures for Weibo
-// @version        0.1
+// @version        0.2
 // @include        http://weibo.com/*
 // ==/UserScript==
 (function() {
@@ -12,7 +12,7 @@
         imgNodes = document.querySelectorAll('img.bigcursor');
         // imgUrls = [];
         for (i = 0; i < imgNodes.length; i++) {
-            if (!imgNodes[i].className.match(/enlarged$/)) {
+            if (!imgNodes[i].className.match(/enlarged$/) && imgNodes[i].src.match(/sinaimg.cn/)) {
                 imgNodes[i].click();
                 imgNodes[i].className += ' enlarged';
             }
